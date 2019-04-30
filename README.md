@@ -42,12 +42,12 @@ $ gcloud composer environments update sendgrid-airflow-test --location europe-we
 #### To make a table in BigQuery given a schema. First upload the json file using gcloud console.
 $ bq mk --schema product_table.json -t avid-infinity-196009:product_sendgrid.products_table
 
-# Insert into BigQuery table
+#### Insert into BigQuery table
 
-INSERT INTO product_sendgrid.products_table (product_name, product_id, product_price, sale)
-VALUES('Trendy Wrist Friendship Band', 'FUR-BO-10001798', '$4.99', False),
-     ('Led Light Snowman Christmas Decoration with Tree', 'OFF-AR-10000246', '$5.35', True),
-     ('Merry Christmas Stocking Decoration', 'OFF-ST-10004186', '$0.46', True)
+`INSERT INTO product_sendgrid.products_table (product_name, product_id, product_price, sale)
+ VALUES   ('Trendy Wrist Friendship Band', 'FUR-BO-10001798', '$4.99', False),
+          ('Led Light Snowman Christmas Decoration with Tree', 'OFF-AR-10000246', '$5.35', True),
+          ('Merry Christmas Stocking Decoration', 'OFF-ST-10004186', '$0.46', True)`
 
 
 SELECT product_id, product_name FROM `avid-infinity-196009.product_sendgrid.products_table`
