@@ -4,7 +4,7 @@ from airflow import models
 from airflow.operators import bash_operator
 
 default_dag_args = {
-    'start_date': datetime.datetime(2018, 12, 17, 0, 0),
+    'start_date': datetime.datetime(2019, 05, 01, 0, 0),
     'retries': 1,
     'retry_delay': datetime.timedelta(minutes=2),
     'project_id': models.Variable.get('gcp_project')
