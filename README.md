@@ -20,6 +20,7 @@ $ gsutil ls -r gs://europe-west1-first-airflow--96d53b82-bucket/logs|dags
 
 #### To list all the buckets & delete a particular bucket
 $ gsutil ls
+
 $ gsutil rm -r gs://catalog_images_bkt gs://catalog_images_bkt_backup
 
 #### To delete dags from cloud shell. The storage is there, since the python files/dags are in `Storage`
