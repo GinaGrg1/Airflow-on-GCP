@@ -34,6 +34,7 @@ $ gcloud composer environments delete first-airflow-test --location europe-west1
 
 #### Setting up the env variable for sendGrid. This can also be done via the UI.
 $ gcloud composer environments update sendgrid-airflow-test --location europe-west1 --update-env-variables=SENDGRID_API_KEY= <some-api-key>
+
 $ gcloud composer environments update sendgrid-airflow-test --location europe-west1 --update-env-variables=SENDGRID_MAIL_FROM=hahaha@gmail.com
 
 
