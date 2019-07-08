@@ -12,7 +12,9 @@ $ gcloud composer environments update first-airflow-test --update-pypi-packages-
 
 #### To set up enivronment variables to be used in the dag files. 
 $ gcloud composer environments run first-airflow-test --location europe-west1 variables -- --set *gcp_project* transfer-gcp
+
 $ gcloud composer environments run first-airflow-test --location europe-west1 variables -- --set *gcs_source_bucket* gs://catalog_images_bkt
+
 $ gcloud composer environments run first-airflow-test --location europe-west1 variables -- --set *gcs_dest_bucket* gs://catalog_images_bkt_backup
 
 #### To list all the logs & dags
@@ -25,6 +27,7 @@ $ gsutil rm -r gs://catalog_images_bkt gs://catalog_images_bkt_backup
 
 #### To delete dags from cloud shell. The storage is there, since the python files/dags are in `Storage`
 $ gcloud composer environments storage dags delete --environment <composer-name> --location <composer-location> <some-python-dag-file>
+ 
 $ gcloud composer environments storage dags delete --environment first-airflow-test --location europe-west1 python_bash_dummy.py
 
 #### To list composer environments, in a given location.
@@ -74,5 +77,6 @@ $ gcloud composer environments run sendgrid-airflow-test --location europe-west1
 
 #### Used in creating Dataproc cluster
 $ gcloud composer environments run sendgrid-airflow-test --location europe-west1 variables -- --set gce_zone europe-west1-a
+
 $ gsutil cat gs://europe-west1-sendgrid-airfl-58e076f9-bucket/dags/wordcount/<some-folder>/part-r-00000
 
